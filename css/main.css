@@ -11,16 +11,32 @@ body {
   text-transform: uppercase;
 }
 
-.text-center {
-  text-align: center!important;
+.line-start {
+  display: inline-block;
+  position: relative;
+  font-size: 16px !important;
 }
 
-.line-start {
-  border: none;
-  border-top: solid 5px;
-  max-width: 250px;
-  margin: 25px auto 30px;
-  padding: 0;
+
+.line-start::after, .line-start::before {
+  border-bottom: 5px solid;
+  bottom: 50%;
+  content: "";
+  margin: 0 10px;
+  position: absolute;
+  width: 100px;
+}
+
+.line-start::before {
+    left: -130px
+}
+
+.line-start::after {
+    right: -130px
+}
+
+.text-center {
+  text-align: center!important;
 }
 
 /*Alinear en linea las listas*/
@@ -52,9 +68,14 @@ body {
   font-size: 48px;
   font-weight: bold;
   margin-bottom: 0;
+  margin-top: 10vh;
 }
 
 /*********Header***********/
+.image-jumbotrom img {
+  width: 250px;
+  height: 250px;
+}
 
 .navbar-nav li a ,.navbar-header a {
   color: white;
@@ -67,6 +88,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 10000;
 }
 
 .container-bar {
@@ -145,10 +167,16 @@ figure {
 
 .container-portfolio h2 {
   text-align: center;
+
 }
 
 .image-portfolio figure {
   display: inline-block;
+}
+
+.image-portfolio figure img {
+  height: 250px;
+  width: 350px;
 }
 
 /***** Section - "About" *****/
@@ -158,9 +186,12 @@ figure {
 }
 
 .about-row {
+  display: inline-block;
   margin-left: 10px;
-  padding: 0 20px;
   text-align: left !important;
+  width: 350px;
+  vertical-align: top;
+  line-height: 1.5;
 }
 
 /***** Section - "Contact-me" *****/
@@ -172,35 +203,55 @@ figure {
   border-bottom-color: rgb(192, 194, 194);
   color: gray;
   font-size: 16px;
-  height: 5vh;
+  height: 10vh;
+  font-size: 20px;
   text-decoration: none;
   width: 100vh;
 }
 
 .btn {
-
   background-color: #18BC9C;
   border-style: none;
   border-radius: 5px;
   border: 2px solid #FFFFFF;
   color: #FFFFFF;
   font-size: 20px;
+  margin-top: 1vh;
   margin-bottom: 5vh;
   padding: 10px;
 }
+
+
 
 /*****Footer******/
 footer{
   background-color: #2C3E50;
 }
 
-.row, .about-row {
+.container-footer{
+  padding: 5vh 0 10vh 0;
+}
+
+.row-footer {
   display: inline-block;
+  margin-left: 10vh;
   vertical-align: top;
   width: 40vh;
+  line-height: 1.5;
 }
+
 
 .footer-below p {
   margin-bottom: 0;
   padding-bottom: 20px;
+}
+
+.icon li {
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.icon li i {
+  text-align: center;
 }
